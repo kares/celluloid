@@ -1,3 +1,7 @@
+0.15.2.1 (pending!)
+-------------------
+* fix InternalPool is not properly synchronized (#418)
+
 0.15.2 (2013-10-06)
 -------------------
 * require 'celluloid/test' for at_exit-free testing
