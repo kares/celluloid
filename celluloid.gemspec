@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.files        = Dir['README.md', 'CHANGES.md', 'LICENSE.txt', 'lib/**/*', 'spec/**/*', 'examples/*']
   gem.require_path = 'lib'
 
-  gem.add_runtime_dependency 'timers', '~> 4.0.0'
+  gem.add_runtime_dependency 'timers', '~> 4.0'
 
   gem.add_development_dependency 'bundler'
 end

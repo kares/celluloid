@@ -3,7 +3,7 @@ gemspec development_group: :gem_build_tools
 
 gem 'coveralls', require: false
 
-gem 'timers', github: 'celluloid/timers'
+gem 'timers', '~> 4.1.2'
 
 group :development do
   gem 'pry'
