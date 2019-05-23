@@ -20,7 +20,7 @@ module Celluloid
 
     def method_missing(meth, *args, &block)
       unless @mailbox.alive?
-        raise DeadActorError, "attempted to call a dead actor"
+        raise DeadActorError, "attempted to call a dead actor: #{meth}"
       end
 
       if @mailbox == ::Thread.current[:celluloid_mailbox]
