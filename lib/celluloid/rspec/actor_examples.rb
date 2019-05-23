@@ -32,6 +32,19 @@ RSpec.shared_examples "Celluloid::Actor examples" do |included_module, task_klas
     actor = actor_class.new "Troy McClure"
     expect(actor.hash).not_to eq(Kernel.hash)
     expect(actor.object_id).not_to eq(Kernel.object_id)
+    expect(actor.eql? actor).to be_truthy
+  end
+
+  it "can be stored in hashes even when dead" do
+    actor = actor_class.new 'Troy McClure'
+    actor.terminate
+
+    #expect(actor.dead?).to be_truthy
+    expect(actor.alive?).to be_falsey
+
+    expect(actor.hash).not_to eq(Kernel.hash)
+    expect(actor.object_id).not_to eq(Kernel.object_id)
+    expect(actor.eql? actor).to be_truthy
   end
 
   it "implements respond_to? correctly" do
